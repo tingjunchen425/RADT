@@ -30,7 +30,13 @@ docker-compose build
 docker-compose run --rm radt
 ```
 
-啟動後，您應該能看到熟悉的 RADT 2.0 歡迎畫面與模型選擇清單，這代表容器已成功連線到您本機的 Ollama！
+### docker image 下載後的執行方法
+```bash
+docker run -it \
+  -v $(pwd)/results:/app/results \
+  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
+  vigus0000/radt:v0.3.2
+```
 
 ## 常見問題 (Troubleshooting)
 
