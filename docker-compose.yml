@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  radt:
+    build: .
+    container_name: radt_batch
+    volumes:
+      # 將本機資料夾與容器內資料夾綁定，確保生成結果和斷點記錄存在本機
+      - ./results:/app/results
+      - ./.checkpoint:/app/.checkpoint
+    environment:
+      # 連接到主機上的 Ollama
+      # Windows/Mac 下可使用 host.docker.internal
+      # 如果在 Linux 上，可能需要使用 network_mode: "host" 或者 docker0 ip
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+    # batch_attack.py 有互動式 input，因此需要 stdin_open 和 tty
+    stdin_open: true
+    tty: true

@@ -1,0 +1,30 @@
+# 文檔路徑配置
+# Documentation Path Configuration
+
+# 此檔案記錄所有文檔的位置便於程式或工具引用
+# This file records the location of all documentation for easy reference by programs or tools
+
+docs:
+  guides:
+    main: docs/guides/README.md
+    quickstart: docs/guides/QUICKSTART.md
+
+  strategies:
+    bridge_tiers: docs/strategies/BRIDGE_STRATEGIES_TIER.md
+
+  config:
+    tool_settings: docs/config/tool_setting.md
+    ice_api: docs/config/ICE_api_tool.md
+
+  changelog:
+    version_history: docs/changelog/CHANGELOG.md
+    development_plan: docs/changelog/plan.md
+
+# 根目錄主入口 / Root directory main entry
+root_readme: README.md
+
+# 使用示例 / Usage Example:
+# from pathlib import Path
+# doc_path = Path("docs/guides/README.md")
+# with open(doc_path, 'r', encoding='utf-8') as f:
+#     content = f.read()
